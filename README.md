@@ -41,7 +41,7 @@ I had created various automation like
 
 ![image](APP/GUI/text_to_morse/1.png)
 
-### 6.[Image to color palette](https://github.com/polonium31/python_projects/tree/main/APP/GUI/text_to_morse)
+### 6.[Image to color palette](https://github.com/polonium31/Python_Projects/tree/master/APP/GUI/image_to_color)
 
 ![image](APP/GUI/image_to_color/image.jpeg)
 
