@@ -14,40 +14,42 @@ def file_opener():
     file_path.insert(tk.END, file_path_dic)
 
 
+def copy(digit):
+    pass
+
+
 def process():
     file_name_ = file_path.get("1.0", tk.END)
     if file_path.compare("end-1c", "==", "1.0"):
         messagebox.showerror("show error", "Please select the file")
     else:
         file_name_ = file_name_.strip('\n')
-        print(file_name_)
         colors = extcolors.extract_from_path(file_name_)
-        list =[]
-        print(colors)
-        print()
+        list = []
         for i in range(0, len(colors[0])):
             x = str(colors[0][i][0])
             x = x.replace('(', '')
             x = x.replace(')', '')
             x = x.split(",")
             list.append(rgbtohex(r=int(x[0]), g=int(x[1]), b=int(x[2])))
-        one.config(background=str(list[0]), highlightbackground="black")
+        one.config(state="disable", background=str(list[0]), highlightbackground="black")
         one_label.config(text=str(list[0]))
 
-        two.config(background=str(list[1]), highlightbackground="black")
+        two.config(state="disable", background=str(list[1]), highlightbackground="black")
         two_label.config(text=str(list[1]))
 
-        three.config(background=str(list[2]), highlightbackground="black")
+        three.config(state="disable", background=str(list[2]), highlightbackground="black")
         three_label.config(text=str(list[2]))
 
-        four.config(background=str(list[3]), highlightbackground="black")
+        four.config(state="disable", background=str(list[3]), highlightbackground="black")
         four_label.config(text=str(list[3]))
 
-        five.config(background=str(list[4]), highlightbackground="black")
+        five.config(state="disable", background=str(list[4]), highlightbackground="black")
         five_label.config(text=str(list[4]))
 
-        six.config(background=str(list[5]), highlightbackground="black")
+        six.config(state="disable", background=str(list[5]), highlightbackground="black")
         six_label.config(text=str(list[5]))
+
 
 screen = tk.Tk()
 screen.title("Image to color palette Generator")
@@ -89,30 +91,31 @@ two.grid(row=3, column=1, pady=10)
 three_label = tk.Label(screen, text=" ", font=("Montserrat", 20), bg="#faf7e3", fg='black')
 three_label.grid(sticky="W", row=4, column=0, padx=10)
 
-three = tk.Text(screen, width=20, height=1, font=("Courier New", 24), background="#faf7e3", highlightbackground="#faf7e3",
+three = tk.Text(screen, width=20, height=1, font=("Courier New", 24), background="#faf7e3",
+                highlightbackground="#faf7e3",
                 highlightthickness=1, bd=0)
 three.grid(row=4, column=1, pady=10)
 
 four_label = tk.Label(screen, text=" ", font=("Montserrat", 20), bg="#faf7e3", fg='black')
 four_label.grid(sticky="W", row=5, column=0, padx=10)
 
-four = tk.Text(screen, width=20, height=1, font=("Courier New", 24), background="#faf7e3", highlightbackground="#faf7e3",
+four = tk.Text(screen, width=20, height=1, font=("Courier New", 24), background="#faf7e3",
+               highlightbackground="#faf7e3",
                highlightthickness=1, bd=0)
 four.grid(row=5, column=1, pady=10)
 
 five_label = tk.Label(screen, text=" ", font=("Montserrat", 20), bg="#faf7e3", fg='black')
 five_label.grid(sticky="W", row=6, column=0, padx=10)
 
-five = tk.Text(screen, width=20, height=1, font=("Courier New", 24), background="#faf7e3", highlightbackground="#faf7e3",
+five = tk.Text(screen, width=20, height=1, font=("Courier New", 24), background="#faf7e3",
+               highlightbackground="#faf7e3",
                highlightthickness=1, bd=0)
 five.grid(row=6, column=1, pady=10)
 
 six_label = tk.Label(screen, text=" ", font=("Montserrat", 20), bg="#faf7e3", fg='black')
 six_label.grid(sticky="W", row=7, column=0, padx=10)
 
-
 six = tk.Text(screen, width=20, height=1, font=("Courier New", 24), background="#faf7e3", highlightbackground="#faf7e3",
               highlightthickness=1, bd=0)
 six.grid(row=7, column=1, pady=10)
-
 screen.mainloop()
